@@ -8,10 +8,12 @@ def main():
 	
 	print_instruction()
 	
-	board = []
-	for i in range(9):
-		board.append(-1)
-		
+	#board = []
+	#for i in range(9):
+	#	board.append(-1)
+	board=[-1 for i in range(9)] #this is quicker than a for loop+append, for future reference :)
+	
+	
 	win = False
 	move = 0
 	while not win:
