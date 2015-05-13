@@ -18,17 +18,19 @@ def main():
 
 		print_board(board)
 		print "Turn number" + str(move+1)
-		if move % 2 == 0:
-			turn = 'X'
-		else:
-			turn = 'O'
-
-		user = get_input(turn)
-		while board[user] != -1:
-			print "Invalid move! Cell already taken. Please try again.\n"
-			user = get_input(turn)
-		board[user] = 1 if turn == 'X' else 0
-
+        	if move % 2 == 0:
+            		#this is the user
+            		turn = 'X'
+            		user = get_input(turn)
+            		while board[user] != -1:
+                		print "Invalid move! Cell already taken. Please try again.\n"
+                		user = get_input(turn)
+            		board[user] = 1
+        	else:
+            		#this will be the computer
+            		turn = 'O'
+            		comp=generate_o(board)#computer behaviour define
+            		board[comp]=0
 		move += 1
 		if move > 4:
 			winner = check_win(board)
